@@ -17,6 +17,7 @@ void Queue::Show() {
 
 Queue::~Queue()
 {
+	cout << "Queue destructor!";
 	//óäàëåíèå î÷åðåäè
 	delete[]Wait;
 }
@@ -88,4 +89,16 @@ int Queue::Extract()//Âåðíåò ïåðâîãî ÷åëà
 		cout << "!!!!";
 		return -1;//ÅÑËÈ Î×ÅÐÅÄÜ ÏÓÑÒÀß ÍÈ×ÅÃÎ ÍÅ ÄÅËÀÅÌ è âîçâðàùàåì -1
 	}
+}
+Queue::Queue(const Queue& other)
+{
+	
+	MaxQueueLength = other.MaxQueueLength;
+	Wait = new int[MaxQueueLength];
+
+	for (int i = 0; i < other.QueueLength; ++i) {
+		Wait[i] = other.Wait[i];
+	}
+
+	QueueLength = other.QueueLength;
 }

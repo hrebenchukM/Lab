@@ -4,7 +4,7 @@
 class LOHOTRON
 {
 	static const int N = 10;
-	Queue* drums;//Динамические поля класса лохотрон
+	Queue drums[3];//Динамические поля класса лохотрон|| массив очередей
 
 	char display[3];//Show 3 znachka
 	char symbols[N] = {'@', '#', '$', '%', '&', '*', '7', '?', 'X', 'Y'};

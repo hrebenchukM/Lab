@@ -10,8 +10,9 @@ class Queue
 	int QueueLength;
 
 public:
-	// Конструктор
+	// Конструкторы
 	Queue()=default;
+	Queue(const Queue& other);
 	Queue(int m);
 	
 	//Деструктор
@@ -22,6 +23,8 @@ public:
 
 	// Извлечение элемента
 	int Extract();
+
+
 
 	// Очистка очереди
 	void Clear();
